@@ -78,8 +78,16 @@ def test_event_loop_argument_deprecated():
     event_loop = asyncio.new_event_loop()
     endpoint_uri = "ws://127.0.0.1:8546"
     websocket_kwargs = {}
-    match0 = "The event_loop parameter is deprecated and was removed from websocket provider as of web3 v6. Consider calling this method without passing this argument instead."
-    match1 = "The loop parameter is deprecated and was removed from websocket provider as of web3 v6. Consider instantiating this class without passing this argument instead."
+    match0 = (
+        "The event_loop parameter is deprecated and was removed from "
+        "websocket provider as of web3 v6. Consider calling this method "
+        "without passing this argument instead."
+    )
+    match1 = (
+        "The loop parameter is deprecated and was removed from websocket "
+        "provider as of web3 v6. Consider instantiating this class without passing "
+        "this argument instead."
+    )
     with pytest.warns(
         DeprecationWarning,
         match=match0,
