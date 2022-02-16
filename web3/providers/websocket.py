@@ -78,6 +78,11 @@ class PersistentWebSocket:
         self.endpoint_uri = endpoint_uri
         self.websocket_kwargs = websocket_kwargs
 
+    async def __aenter__(self) -> WebSocketClientProtocol:
+        if self.ws is None:
+            self.ws = await connect(uri=self.endpoint_uri, **self.websocket_kwargs)
+        return self.ws
+
     async def __aexit__(
         self,
         exc_type: Type[BaseException],
