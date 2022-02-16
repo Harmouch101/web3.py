@@ -1,9 +1,9 @@
 import asyncio
 import socket
 import time
+import warnings
 
 import websockets
-import warnings
 
 
 def get_open_port():

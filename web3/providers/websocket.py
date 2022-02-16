@@ -14,7 +14,6 @@ from typing import (
     Type,
     Union,
 )
-
 import warnings
 
 from eth_typing import (

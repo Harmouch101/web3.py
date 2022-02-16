@@ -15,8 +15,8 @@ from web3.exceptions import (
     ValidationError,
 )
 from web3.providers.websocket import (
-    WebsocketProvider,
     PersistentWebSocket,
+    WebsocketProvider,
 )
 
 if sys.version_info >= (3, 8):
